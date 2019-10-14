@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import Image from './components/Image'
 
 class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      imgURL: 'https://cdnb.artstation.com/p/assets/images/images/009/446/313/large/sylvain-sarrailh-illenium.jpg?1519056202'
+    }
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Image
+        img={this.state.imgURL}
+        // or instead of setting state you could just pass the imgURL directly in the prop.
+        //img={'https://cdnb.artstation.com/p/assets/images/images/009/446/313/large/sylvain-sarrailh-illenium.jpg?1519056202'}
+        />
       </div>
     );
   }
